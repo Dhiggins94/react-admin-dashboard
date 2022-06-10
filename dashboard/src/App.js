@@ -23,9 +23,11 @@ import {
   Editor,
 } from "./pages";
 import "./App.css";
+import { useStateContext } from "./contexts/ContextProvider";
 
 export default function App() {
-  const activeMenu = true;
+  const {activeMenu} = useStateContext()
+  // const activeMenu = true;
   return (
     <div>
       <BrowserRouter>
@@ -92,3 +94,4 @@ export default function App() {
 }
 // the activemenu portion is for making the sidebar apear and vanish via conditional. this also require tailwind css stylings make that work
 // dark:bg is how tailwind utilizes darkMode as a library
+// we import our activemenu context into our app.js as a hook so we no longer need to have it as an static value.
