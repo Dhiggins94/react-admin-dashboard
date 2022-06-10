@@ -11,17 +11,29 @@ const initalState = {
 };
 // these are to seethe state of the things we're keeping track of
 export const ContextProvider = ({ children }) => {
-
-const [activeMenu , setActiveMenu] = useState(true)
-
+  const [activeMenu, setActiveMenu] = useState(true);
+  const [isClicked, setIsClicked] = useState(initalState);
+  const [screenSize, setScreenSize] = useState(undefined);
+  const handleClick = (clicked) => {
+    setIsClicked({ ...initalState, [clicked]: true });
+  };
   return (
-    <StateContext.Provider value={{ activeMenu, setActiveMenu}}  >
-
-{children}
+    <StateContext.Provider
+      value={{
+        activeMenu,
+        setActiveMenu,
+        isClicked,
+        setIsClicked,
+        handleClick,
+        screenSize,
+        setScreenSize,
+      }}
+    >
+      {children}
     </StateContext.Provider>
   );
 };
-export const useStateContext = () => useContext(StateContext)
+export const useStateContext = () => useContext(StateContext);
 
 // our context api here is going to help keep track of the state of the navbar to see if it should be currently open or closed
 // the contextprovider contains a children property and then we can return something or start delecaring state. inside contextprovider we usually return the state context(in this case the active menu)
