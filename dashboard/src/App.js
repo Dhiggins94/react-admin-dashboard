@@ -61,7 +61,7 @@ export default function App() {
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
               <Navbar />
             </div>
-          </div>
+      
           <div>
             <Routes>
               {/* dashboard */}
@@ -86,7 +86,8 @@ export default function App() {
               <Route path="/pyramid" element={<Pyramid />} />
               <Route path="/stacked" element={<Stacked />} />
             </Routes>
-          </div>
+            </div>
+            </div>
         </div>
       </BrowserRouter>
     </div>

@@ -74,3 +74,4 @@ export default function Sidebar() {
 // overflow hidden, overflow shows what happen if the content overflows an elements box, hidden cuts the overflow and leaves the content invisible
 // content is for controlling the  before and after of an element
 // the onclick keeps track of the active menu opening and closing, first we set it to false, then we have the 2nd onclin to check the previous value of the active menu and to make it the opposite of that hence the !prevactivemenu
+// the handlecloseside bar is used  so that once the activemenu and the screensize reaches a certain value it will close that sidebar so depending if you are using a mobile device the screen will automatically close  even if you click to a new component, but if its big enough it will remain open

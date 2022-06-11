@@ -40,9 +40,9 @@ export default function Navbar() {
         <span
           style={{ background: dotColor }}
           className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
-        >
-          {icon}
-        </span>
+        />
+       
+       {icon}
       </button>
     </TooltipComponent>
   );
@@ -85,7 +85,7 @@ export default function Navbar() {
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
             onClick={() => handleClick("userProfile")}
           >
-            <img className="rounded-full w-8 h-8" src={avatar} />
+            <img alt="avatar" className="rounded-full w-8 h-8" src={avatar} />
             <p>
               <span className="text-gray-400 text-14">Hi, </span> {""}
               <span className="text-grey-400 font-bold m1 text-14">Syrus</span>
@@ -106,3 +106,7 @@ export default function Navbar() {
 
 // making a navbutton since our navbar will contain multiple navigation buttons
 // the navbutton is a button wrapped in a tooltip component
+
+// The Tooltip component displays a pop-up containing an information or a message when you hover, click, focus, or touch an element. The information displayed in the Tooltip can include simple text, images, hyperlinks, or custom templates. In mobile devices, to display the Tooltip, you need to tap and hold the target elements.
+
+// the useffect helps us check the window screensize and will active the handle resize function to either hide or show the sidebar depending on the device used, anytime we used something like window.addeeventlistener we also have to use removeeventlistner after its been used
