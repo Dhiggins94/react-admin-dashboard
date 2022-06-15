@@ -34,3 +34,9 @@ export default function Stacked({width, height}) {
     </SeriesCollectionDirective>
   </ChartComponent>;
 }
+
+
+// https://ej2.syncfusion.com/react/documentation/chart/how-to/stacking-total/ for stacked componens
+
+// this is for charts https://ej2.syncfusion.com/react/documentation/chart/chart-dimensions/
+// serives inside of inject means what kind of functinality we want our chart to have so things like a legend and a category are examples

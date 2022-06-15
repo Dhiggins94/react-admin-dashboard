@@ -29,7 +29,7 @@ export default function SparkLine({
       type={type}
       tooltipSettings={{
         visible: true,
-        format: '${x} : data ${yval}',
+        format: "${x} : data ${yval}",
         trackLineSettings: {
           visible:true
         }
@@ -39,3 +39,5 @@ export default function SparkLine({
     </SparklineComponent>
   );
 }
+// the settings to edit the sparkline components can be found on synchfusions doucmentation  
+// https://ej2.syncfusion.com/react/documentation/sparkline/getting-started/
