@@ -83,13 +83,13 @@ const {currentColor} = useStateContext()
                     23%
                   </span>
                 </p>
-                <p className="text-gray-100 mt-1">Budget</p>
+                <p className="text-gray-500 mt-1">Budget</p>
               </div>
               <div className="mt-8">
                 <p>
                   <span className="text-3xl font-semibold"> $28,345</span>
                 </p>
-                <p className="text-gray-100 mt-1">Expense</p>
+                <p className="text-gray-500 mt-1">Expense</p>
               </div>
               <div className="mt-5">
                 <SparkLine
