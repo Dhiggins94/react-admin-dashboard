@@ -14,6 +14,27 @@ export const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(true);
   const [isClicked, setIsClicked] = useState(initalState);
   const [screenSize, setScreenSize] = useState(undefined);
+  const [currentColor, setCurrentColor] = useState("#03C9D7");
+  const [currentMode, setCurrentMode] = useState("Light");
+  const [themeSettings, setThemeSettings] = useState(false);
+
+  const setMode = (e) => {
+    setCurrentMode(e.target.value);
+    localStorage.setItem("themeMode", e.target.value);
+    // update the local storage so the same color theme is active
+    setThemeSettings(false);
+    // this helps us call the event for our onClick in themesettings, the onClick  calls the setMode function
+  };
+
+  const setColor = (color) => {
+    setCurrentColor(color);
+    localStorage.setItem("colorMode", color);
+    // update the local storage so the same color is active
+    setThemeSettings(false);
+    // this calls an string for our onClick in themesettings, no need to do an "event.target.value". will show up as undefined otherwise
+  };
+
+
   const handleClick = (clicked) => {
     setIsClicked({ ...initalState, [clicked]: true });
   };
@@ -27,6 +48,12 @@ export const ContextProvider = ({ children }) => {
         handleClick,
         screenSize,
         setScreenSize,
+        currentColor,
+        currentMode,
+        themeSettings,
+        setThemeSettings,
+        setMode,
+        setColor,
       }}
     >
       {children}
@@ -41,4 +68,3 @@ export const useStateContext = () => useContext(StateContext);
 
 // we use isclicked and setisclicked to check whether or not the icons are going to open and perform their functions on the navbar and that goes together with the handleclick function. we take the object that is initalstate and spread it so that we can check each individual item if its been clicked
 // the screensize use state is to check the window of the screen and if it reaches a certain size, we can hide the navbar. this is useful for mobile viewing
-

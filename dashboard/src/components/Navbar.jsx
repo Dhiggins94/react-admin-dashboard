@@ -10,7 +10,7 @@ import { Cart, Chat, Notification, UserProfile } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 
 export default function Navbar() {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize,currentColor } = useStateContext();
   
   useEffect(() => {
     const handleResize = () => setScreenSize
@@ -54,7 +54,7 @@ export default function Navbar() {
         customFunction={() =>
           setActiveMenu((prevActiveMenu) => !prevActiveMenu)
         }
-        color="blue"
+        color={currentColor}
         icon={<AiOutlineMenu />}
       />
 
@@ -62,7 +62,7 @@ export default function Navbar() {
         <NavButton
           title="Cart"
           customFunction={() => handleClick("cart")}
-          color="blue"
+          color={currentColor}
           icon={<FiShoppingCart />}
         />
 
@@ -70,14 +70,14 @@ export default function Navbar() {
           title="Chat"
           dotColor="#03C9D7"
           customFunction={() => handleClick("chat")}
-          color="blue"
+          color={currentColor}
           icon={<BsChatLeft />}
         />
         <NavButton
           title="Notifications"
           dotColor="#03C9D7"
           customFunction={() => handleClick("notification")}
-          color="blue"
+          color={currentColor}
           icon={<RiNotification3Line />}
         />
         <TooltipComponent content="Profile" position="BottomCenter">
