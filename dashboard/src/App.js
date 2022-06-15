@@ -33,9 +33,8 @@ export default function App() {
     currentColor,
     currentMode,
   } = useStateContext();
-  // const activeMenu = true;
   return (
-    <div className={currentMode === "Dark" ? "dark" : ""}>
+    <div className={currentMode === "Dark" ? "dark" : " "}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
@@ -56,7 +55,7 @@ export default function App() {
             </div>
           ) : (
             <div className="w-0 dark:bg-secondary-dark-bg">
-              {" "}
+           
               <Sidebar />
             </div>
           )}
